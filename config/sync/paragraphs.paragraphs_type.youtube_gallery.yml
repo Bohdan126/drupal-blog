@@ -1,9 +1,0 @@
-uuid: 7a67fa39-9069-4b77-badf-576e3e19a5f2
-langcode: en
-status: true
-dependencies: {  }
-id: youtube_gallery
-label: 'Gallery Youtube'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

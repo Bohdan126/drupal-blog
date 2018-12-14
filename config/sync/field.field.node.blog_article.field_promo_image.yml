@@ -1,38 +1,28 @@
-uuid: c9b79d4d-c690-43f8-a698-492443edb35d
+uuid: 3579b8da-00c3-4995-bf2e-22d3c0ec7a05
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_promo_image
+    - media.type.image
     - node.type.blog_article
-  module:
-    - image
 id: node.blog_article.field_promo_image
 field_name: field_promo_image
 entity_type: node
 bundle: blog_article
-label: Promo-image
+label: 'Promo image'
 description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: 'fields/node.blog_article.field_promo_image/storage/[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
-  max_filesize: ''
-  max_resolution: ''
-  min_resolution: ''
-  alt_field: true
-  alt_field_required: false
-  title_field: false
-  title_field_required: false
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  handler: 'default:file'
-  handler_settings: {  }
-field_type: image
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: c6609c2f-6aa5-4089-b168-9a3e635959fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.remote_video
+  module:
+    - text
+id: paragraph.remote_video.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: remote_video
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
