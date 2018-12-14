@@ -1,9 +1,13 @@
 uuid: 5783061c-fb70-45e3-8fb8-735352571be2
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - drupalblog_paragraphs
 id: gallery
 label: Gallery
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  drupalblog_paragraphs_gallery:
+    enabled: true
