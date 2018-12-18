@@ -1,9 +1,13 @@
 uuid: 27d9ee3b-6679-474d-9065-9e6f24e734ee
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - drupalblog_paragraphs
 id: image_and_text
 label: 'Image and text'
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  drupalblog_paragraphs_image_and_text:
+    enabled: true

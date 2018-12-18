@@ -38,6 +38,7 @@ module:
   history: 0
   image: 0
   imagemagick: 0
+  kint: 0
   link: 0
   mailsystem: 0
   markdown: 0
