@@ -34,7 +34,12 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
    * Extends the paragraph render array with behavior.
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
+    $bem_block = 'paragraph-style';
+    $selected_styles = $paragraph->getBehaviorSetting($this->getPluginId(), 'styles', []);
 
+    foreach ($selected_styles as $style) {
+      $build['#attributes']['class'][] = Html::getClass($bem_block . '--' . $style);
+    }
   }
 
   /**
@@ -46,6 +51,7 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
       '#type' => 'details',
       '#title' => $this->t('Paragraph styles'),
       '#open' => FALSE,
+      '#weight' => 100,
     ];
 
     $styles = $this->getStyles($paragraph);
@@ -68,16 +74,19 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
    */
   public function submitBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
     $styles = [];
-    $filtered_values = $this->filterBehaviorFormSubmitValues($paragraph,$form, $form_state);
-    $styles_groups = $filtered_values['style_wrapper'];
+    $filtered_values = $this->filterBehaviorFormSubmitValues($paragraph, $form, $form_state);
 
-    foreach ($styles_groups as $group) {
-      foreach ($group as $style_name) {
-        $styles[] = $style_name;
+    if (isset($filtered_values['style_wrapper'])) {
+      $style_groups = $filtered_values['style_wrapper'];
+
+      foreach ($style_groups as $group) {
+        foreach ($group as $style_name) {
+          $styles[] = $style_name;
+        }
       }
-    }
 
-    $paragraph->setBehaviorSettings($this->getPluginId(), ['styles' => $styles]);
+      $paragraph->setBehaviorSettings($this->getPluginId(), ['styles' => $styles]);
+    }
   }
 
   /**
@@ -107,3 +116,4 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
   }
 
 }
+

@@ -1,9 +1,19 @@
 uuid: eeb10e16-b513-4923-9adf-d48fdd269d27
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - drupalblog_paragraphs
 id: remote_video_gallery
 label: 'Remote Video Gallery'
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  drupalblog_paragraphs_paragraph_class:
+    enabled: true
+  drupalblog_paragraphs_paragraph_style:
+    enabled: true
+  drupalblog_paragraphs_paragraph_title:
+    enabled: true
+  drupalblog_paragraphs_remote_video_gallery:
+    enabled: true

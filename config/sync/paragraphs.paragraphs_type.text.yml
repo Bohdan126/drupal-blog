@@ -1,9 +1,17 @@
 uuid: 89abecf3-0b20-4dbe-83ad-fcc351098627
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - drupalblog_paragraphs
 id: text
 label: Text
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  drupalblog_paragraphs_paragraph_class:
+    enabled: true
+  drupalblog_paragraphs_paragraph_style:
+    enabled: true
+  drupalblog_paragraphs_paragraph_title:
+    enabled: true

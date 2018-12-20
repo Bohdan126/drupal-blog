@@ -11,3 +11,9 @@ description: ''
 behavior_plugins:
   drupalblog_paragraphs_image_and_text:
     enabled: true
+  drupalblog_paragraphs_paragraph_class:
+    enabled: true
+  drupalblog_paragraphs_paragraph_style:
+    enabled: true
+  drupalblog_paragraphs_paragraph_title:
+    enabled: true

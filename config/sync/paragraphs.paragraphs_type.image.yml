@@ -1,9 +1,17 @@
 uuid: 41c04b10-1814-4428-98ee-836551202d7c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - drupalblog_paragraphs
 id: image
 label: Image
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  drupalblog_paragraphs_paragraph_class:
+    enabled: true
+  drupalblog_paragraphs_paragraph_style:
+    enabled: true
+  drupalblog_paragraphs_paragraph_title:
+    enabled: true
